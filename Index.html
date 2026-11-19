@@ -1,0 +1,696 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henriques Construção | Materiais Básicos para sua Obra</title>
+    <meta name="description" content="Henriques Construção - Varejista de cal, areia, pedra britada, tijolos e telhas. Qualidade e entrega rápida para sua obra.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração Personalizada do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#ea580c', // Laranja Terracota / Construção
+                            orangeHover: '#c2410c',
+                            dark: '#1e293b',   // Cinza Ardósia Escuro
+                            light: '#f8fafc',  // Fundo Claro
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-orange-600 selection:text-white">
+
+    <!-- Barra de Navegação (Header) -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 bg-orange-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:bg-orange-700 transition-colors">
+                        <i class="fa-solid fa-trowel-bricks text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xl font-extrabold tracking-tight text-slate-900 leading-none">HENRIQUES</span>
+                        <span class="block text-xs font-bold tracking-widest text-orange-600 uppercase mt-0.5">Construção</span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors">Início</a>
+                    <a href="#produtos" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors">Nossos Produtos</a>
+                    <a href="#diferenciais" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors">Por que nos escolher?</a>
+                    <a href="#orcamento" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors">Orçamento</a>
+                </nav>
+
+                <!-- Botão CTA Desktop -->
+                <div class="hidden md:flex items-center">
+                    <a href="#orcamento" class="bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Pedir Orçamento
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Abrir menu" class="p-3 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg">
+            <a href="#inicio" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600">Início</a>
+            <a href="#produtos" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600">Nossos Produtos</a>
+            <a href="#diferenciais" class="mobile-link block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:bg-orange-50 hover:text-orange-600">Por que nos escolher?</a>
+            <a href="#orcamento" class="mobile-link block px-4 py-3 rounded-xl text-base font-bold text-white bg-orange-600 text-center mt-4 shadow">Solicitar Orçamento</a>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-slate-900 overflow-hidden">
+        <!-- Padrão de fundo sutil -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80" 
+                 onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1e293b/ea580c?text=Henriques+Construcao';"
+                 alt="Canteiro de obras" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-900/70"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-600/20 border border-orange-500/30 text-orange-400 text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                    Entrega Rápida na Região
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    A base forte que a sua <span class="text-orange-500">obra merece.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
+                    Na <strong class="text-white">Henriques Construção</strong>, você encontra os melhores materiais básicos direto do nosso depósito: cal, areia, pedra britada, tijolos e telhas com medida certa e preço justo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#produtos" class="px-8 py-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-center shadow-lg shadow-orange-600/30 transition-all flex items-center justify-center gap-2">
+                        Ver Catálogo de Materiais
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="#orcamento" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold text-center transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calculator text-orange-500"></i>
+                        Montar Lista de Pedido
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faixa de Destaques Rápidos -->
+    <section class="bg-orange-600 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-truck-fast text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base">Entrega Ágil</h3>
+                        <p class="text-orange-100 text-sm">Frota própria para sua obra não parar.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base">Medida Garantida</h3>
+                        <p class="text-orange-100 text-sm">Areia e brita carregadas na quantidade exata.</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-medal text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base">Qualidade Comprovada</h3>
+                        <p class="text-orange-100 text-sm">Trabalhamos apenas com fornecedores certificados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Produtos -->
+    <section id="produtos" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Nosso Estoque</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Materiais Básicos para Construção</h2>
+                <p class="text-slate-600">Selecione os materiais que você precisa para adicionar diretamente à sua lista de orçamento rápido.</p>
+            </div>
+
+            <!-- Filtros de Categoria -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10" id="category-filters">
+                <button data-filter="todos" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-900 text-white shadow transition-all">Todos</button>
+                <button data-filter="agregados" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-700 hover:bg-orange-50 hover:text-orange-600 border border-slate-200 transition-all">Areia e Pedra</button>
+                <button data-filter="alvenaria" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-700 hover:bg-orange-50 hover:text-orange-600 border border-slate-200 transition-all">Tijolos e Cal</button>
+                <button data-filter="cobertura" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-700 hover:bg-orange-50 hover:text-orange-600 border border-slate-200 transition-all">Telhas</button>
+            </div>
+
+            <!-- Grid de Produtos (Renderizado via JS) -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Os cards dos produtos serão inseridos aqui pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais / Sobre a Henriques Construção -->
+    <section id="diferenciais" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/334155/ffffff?text=Deposito+Henriques+Construcao';"
+                             alt="Materiais de construção empilhados" class="w-full h-auto object-cover">
+                    </div>
+                    <!-- Card flutuante de experiência -->
+                    <div class="hidden sm:block absolute -bottom-6 -right-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl border border-slate-800 max-w-xs">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fa-solid fa-handshake text-orange-500 text-2xl"></i>
+                            <span class="font-extrabold text-lg">Compromisso Total</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Atendemos desde pequenas reformas residenciais até grandes obras comerciais.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Sobre Nós</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-6">Tradição e confiança do alicerce ao telhado</h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        A <strong>Henriques Construção</strong> nasceu com o propósito de simplificar a compra de materiais brutos e básicos. Sabemos que atrasos na entrega de areia, pedra ou tijolos geram custos extras na obra — por isso, priorizamos pontualidade e transparência em cada pedido.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm sm:text-base"><strong>Venda fracionada ou fechada:</strong> Compre por metro cúbico, milheiro, cento ou sacos avulsos.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm sm:text-base"><strong>Materiais selecionados:</strong> Tijolos com queima uniforme, areia limpa e brita classificada.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm sm:text-base"><strong>Atendimento direto:</strong> Tire dúvidas sobre rendimento de cal, argamassa e telhas com nossa equipe.</p>
+                        </div>
+                    </div>
+
+                    <a href="#orcamento" class="inline-flex items-center gap-2 font-bold text-orange-600 hover:text-orange-700 transition-colors">
+                        Falar com um vendedor agora
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Orçamento Interativo & Contato -->
+    <section id="orcamento" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-orange-500 font-bold text-sm uppercase tracking-wider">Cotação Rápida</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-4">Solicite seu Orçamento</h2>
+                <p class="text-slate-400">Adicione os itens do catálogo ou descreva o que você precisa. Envie sua lista direto para o nosso WhatsApp ou copie o resumo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Lista de Itens Selecionados -->
+                <div class="lg:col-span-7 bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8">
+                    <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+                        <h3 class="text-xl font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-list text-orange-500"></i>
+                            Sua Lista de Materiais
+                        </h3>
+                        <button id="clear-list-btn" class="text-xs font-semibold text-slate-400 hover:text-red-400 transition-colors">
+                            Limpar lista
+                        </button>
+                    </div>
+
+                    <!-- Container Dinâmico dos Itens -->
+                    <div id="quote-items-container" class="space-y-3 min-h-[140px] flex flex-col justify-center">
+                        <!-- Preenchido via JS -->
+                    </div>
+
+                    <!-- Observações Adicionais -->
+                    <div class="mt-6 pt-6 border-t border-slate-700">
+                        <label for="order-notes" class="block text-sm font-semibold text-slate-300 mb-2">Observações ou outros materiais (opcional)</label>
+                        <textarea id="order-notes" rows="3" placeholder="Ex: Preciso de entrega para sexta-feira pela manhã no bairro Centro..." class="w-full rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 p-3.5 text-sm focus:outline-none focus:border-orange-500 transition-colors"></textarea>
+                    </div>
+                </div>
+
+                <!-- Formulário de Envio -->
+                <div class="lg:col-span-5 bg-white text-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">Finalizar Cotação</h3>
+                    <p class="text-sm text-slate-500 mb-6">Preencha seus dados para agilizarmos o cálculo do frete.</p>
+
+                    <form id="quote-form" class="space-y-4">
+                        <div>
+                            <label for="client-name" class="block text-sm font-bold text-slate-700 mb-1">Seu Nome *</label>
+                            <input type="text" id="client-name" required placeholder="Ex: João Silva" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600">
+                        </div>
+
+                        <div>
+                            <label for="client-neighborhood" class="block text-sm font-bold text-slate-700 mb-1">Bairro / Local da Entrega *</label>
+                            <input type="text" id="client-neighborhood" required placeholder="Ex: Jardim das Flores" class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600">
+                        </div>
+
+                        <div class="pt-2 space-y-3">
+                            <button type="submit" class="w-full py-4 px-6 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-base shadow-lg shadow-green-600/20 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                Enviar Pedido via WhatsApp
+                            </button>
+
+                            <button type="button" id="copy-quote-btn" class="w-full py-3 px-6 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy"></i>
+                                Copiar Resumo do Pedido
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Informações de Contato Direto -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 space-y-3 text-sm text-slate-600">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-orange-600 w-4 text-center"></i>
+                            <span>Seg a Sex: 07h às 18h | Sáb: 07h às 12h</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-orange-600 w-4 text-center"></i>
+                            <span>Av. Principal da Construção, 1000 - Sua Cidade</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-orange-600 w-4 text-center"></i>
+                            <span>(11) 99999-9999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-orange-600 rounded-lg flex items-center justify-center text-white">
+                    <i class="fa-solid fa-trowel-bricks text-base"></i>
+                </div>
+                <span class="text-white font-extrabold tracking-tight">HENRIQUES CONSTRUÇÃO</span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-center md:text-left">
+                &copy; <span id="current-year"></span> Henriques Construção. Todos os direitos reservados. Cal, Areia, Pedra Britada, Tijolos e Telhas.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="#inicio" class="text-slate-400 hover:text-white transition-colors text-sm font-semibold">Voltar ao topo <i class="fa-solid fa-arrow-up ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notificação Toast Customizada (Substitui alert()) -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3">
+            <i id="toast-icon" class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+            <span id="toast-message" class="text-sm font-semibold">Item adicionado!</span>
+        </div>
+    </div>
+
+    <!-- Script de Interatividade e Lógica do Catálogo -->
+    <script>
+        // =========================================================================
+        // CONFIGURAÇÕES DA LOJA (Altere o número de WhatsApp abaixo para o seu!)
+        // =========================================================================
+        const WHATSAPP_NUMBER = "5511999999999"; // Formato: Código do País (55) + DDD + Número
+
+        // Catálogo de Produtos da Henriques Construção
+        const productsData = [
+            {
+                id: 'areia-media',
+                name: 'Areia Média Lavada',
+                category: 'agregados',
+                unit: 'm³ (Metro Cúbico)',
+                description: 'Ideal para preparo de concreto, reboco grosso e assentamento de tijolos. Livre de impurezas.',
+                badge: 'Mais Vendido',
+                image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Areia+Media'
+            },
+            {
+                id: 'areia-fina',
+                name: 'Areia Fina para Acabamento',
+                category: 'agregados',
+                unit: 'm³ ou Saco 20kg',
+                description: 'Granulometria selecionada, perfeita para reboco fino, massa de acabamento e rejuntamentos.',
+                badge: '',
+                image: 'https://images.unsplash.com/photo-1534120247760-c44c3e4a62f1?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Areia+Fina'
+            },
+            {
+                id: 'pedra-britada',
+                name: 'Pedra Britada (Brita 1 e 2)',
+                category: 'agregados',
+                unit: 'm³ (Metro Cúbico)',
+                description: 'Alta resistência mecânica para fabricação de concreto estrutural, vigas, pilares e lajes.',
+                badge: 'Alta Resistência',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Pedra+Britada'
+            },
+            {
+                id: 'cal-hidratada',
+                name: 'Cal Hidratada CH-I / CH-III',
+                category: 'alvenaria',
+                unit: 'Saco 20kg',
+                description: 'Proporciona maior liga, plasticidade e retenção de água nas argamassas de assentamento e reboco.',
+                badge: '',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Cal+Hidratada'
+            },
+            {
+                id: 'tijolo-ceramico',
+                name: 'Tijolo Cerâmico Baiano (8 Furos)',
+                category: 'alvenaria',
+                unit: 'Milheiro ou Cento',
+                description: 'Excelente isolamento térmico e acústico, com ranhuras que garantem máxima aderência do reboco.',
+                badge: 'Pronta Entrega',
+                image: 'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Tijolos+Ceramicos'
+            },
+            {
+                id: 'tijolo-macico',
+                name: 'Tijolo Maciço Comum',
+                category: 'alvenaria',
+                unit: 'Milheiro ou Cento',
+                description: 'Indicado para alvenaria estrutural, churrasqueiras, muros de arrimo e detalhes aparentes.',
+                badge: '',
+                image: 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Tijolo+Macico'
+            },
+            {
+                id: 'telha-ceramica',
+                name: 'Telha Cerâmica Portuguesa / Romana',
+                category: 'cobertura',
+                unit: 'Milheiro ou Peça',
+                description: 'Encaixe perfeito, alta impermeabilidade e conforto térmico para o telhado da sua casa.',
+                badge: 'Destaque',
+                image: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Telhas+Ceramicas'
+            },
+            {
+                id: 'telha-fibrocimento',
+                name: 'Telha Ondulada de Fibrocimento',
+                category: 'cobertura',
+                unit: 'Unidade (2,44m / 1,83m)',
+                description: 'Leveza, praticidade na instalação e durabilidade para galpões, garagens e coberturas residenciais.',
+                badge: '',
+                image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
+                fallbackText: 'Telha+Fibrocimento'
+            }
+        ];
+
+        // Estado da lista de orçamento
+        let quoteCart = [];
+
+        // Elementos do DOM
+        const productsGrid = document.getElementById('products-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const quoteItemsContainer = document.getElementById('quote-items-container');
+        const clearListBtn = document.getElementById('clear-list-btn');
+        const quoteForm = document.getElementById('quote-form');
+        const copyQuoteBtn = document.getElementById('copy-quote-btn');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Atualiza ano no rodapé
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Controle do Menu Mobile
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Função para exibir notificação Toast (sem usar alert)
+        let toastTimeout;
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+            if (type === 'error') {
+                toastIcon.className = 'fa-solid fa-circle-exclamation text-red-400 text-lg';
+            } else {
+                toastIcon.className = 'fa-solid fa-circle-check text-green-400 text-lg';
+            }
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Renderizar Cards de Produtos
+        function renderProducts(filter = 'todos') {
+            productsGrid.innerHTML = '';
+            
+            const filtered = filter === 'todos' 
+                ? productsData 
+                : productsData.filter(p => p.category === filter);
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group';
+                
+                const badgeHTML = product.badge 
+                    ? `<span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">${product.badge}</span>` 
+                    : '';
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 bg-slate-200 overflow-hidden">
+                            <img src="${product.image}" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/475569?text=${product.fallbackText}';"
+                                 alt="${product.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            ${badgeHTML}
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">${product.unit}</span>
+                            <h3 class="text-xl font-extrabold text-slate-900 mt-1 mb-2">${product.name}</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">${product.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <button onclick="addToQuote('${product.id}')" class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-orange-600 text-slate-800 hover:text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-plus"></i>
+                            Adicionar ao Orçamento
+                        </button>
+                    </div>
+                `;
+                productsGrid.appendChild(card);
+            });
+        }
+
+        // Lógica dos botões de filtro
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white', 'shadow');
+                    b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                });
+                btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                btn.classList.add('bg-slate-900', 'text-white', 'shadow');
+                
+                renderProducts(btn.dataset.filter);
+            });
+        });
+
+        // Adicionar item à lista de orçamento
+        window.addToQuote = function(productId) {
+            const product = productsData.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = quoteCart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                quoteCart.push({
+                    id: product.id,
+                    name: product.name,
+                    unit: product.unit,
+                    qty: 1
+                });
+            }
+
+            renderQuoteList();
+            showToast(`"${product.name}" adicionado à lista!`);
+        };
+
+        // Alterar quantidade na lista
+        window.updateQty = function(productId, delta) {
+            const itemIndex = quoteCart.findIndex(item => item.id === productId);
+            if (itemIndex === -1) return;
+
+            quoteCart[itemIndex].qty += delta;
+            if (quoteCart[itemIndex].qty <= 0) {
+                quoteCart.splice(itemIndex, 1);
+            }
+            renderQuoteList();
+        };
+
+        // Renderizar a lista de orçamento
+        function renderQuoteList() {
+            if (quoteCart.length === 0) {
+                quoteItemsContainer.innerHTML = `
+                    <div class="text-center py-8 text-slate-400">
+                        <i class="fa-solid fa-cart-plus text-3xl mb-2 opacity-50"></i>
+                        <p class="text-sm">Sua lista está vazia. Clique em <strong>"Adicionar ao Orçamento"</strong> nos produtos acima ou escreva sua necessidade no campo abaixo.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            quoteItemsContainer.innerHTML = '';
+            quoteCart.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center justify-between bg-slate-900/90 border border-slate-700/80 p-3.5 rounded-xl gap-3';
+                row.innerHTML = `
+                    <div class="min-w-0 flex-1">
+                        <h4 class="font-bold text-sm text-white truncate">${item.name}</h4>
+                        <span class="text-xs text-slate-400">Unidade: ${item.unit}</span>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="updateQty('${item.id}', -1)" aria-label="Diminuir quantidade" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center font-bold transition-colors">-</button>
+                        <span class="w-8 text-center font-bold text-sm">${item.qty}</span>
+                        <button type="button" onclick="updateQty('${item.id}', 1)" aria-label="Aumentar quantidade" class="w-8 h-8 rounded-lg bg-orange-600 hover:bg-orange-700 text-white flex items-center justify-center font-bold transition-colors">+</button>
+                    </div>
+                `;
+                quoteItemsContainer.appendChild(row);
+            });
+        }
+
+        // Limpar lista
+        clearListBtn.addEventListener('click', () => {
+            if (quoteCart.length === 0) return;
+            quoteCart = [];
+            renderQuoteList();
+            showToast('Lista de materiais limpa.');
+        });
+
+        // Montar texto formatado do pedido
+        function buildQuoteMessage() {
+            const clientName = document.getElementById('client-name').value.trim() || 'Cliente';
+            const neighborhood = document.getElementById('client-neighborhood').value.trim() || 'Não informado';
+            const notes = document.getElementById('order-notes').value.trim();
+
+            let text = `*ORÇAMENTO - HENRIQUES CONSTRUÇÃO*\n`;
+            text += `----------------------------------\n`;
+            text += `*Cliente:* ${clientName}\n`;
+            text += `*Bairro/Entrega:* ${neighborhood}\n\n`;
+            text += `*MATERIAIS SOLICITADOS:*\n`;
+
+            if (quoteCart.length > 0) {
+                quoteCart.forEach(item => {
+                    text += `• ${item.qty}x ${item.name} (${item.unit})\n`;
+                });
+            } else {
+                text += `• (Nenhum item pré-selecionado no catálogo)\n`;
+            }
+
+            if (notes) {
+                text += `\n*Observações / Outros itens:*\n${notes}\n`;
+            }
+
+            text += `----------------------------------\n`;
+            text += `Aguardo retorno com os valores e prazo de entrega!`;
+            return text;
+        }
+
+        // Enviar para o WhatsApp
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const notes = document.getElementById('order-notes').value.trim();
+
+            if (quoteCart.length === 0 && !notes) {
+                showToast('Adicione pelo menos um item ou descreva o que precisa.', 'error');
+                return;
+            }
+
+            const message = buildQuoteMessage();
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        });
+
+        // Copiar resumo do orçamento para a área de transferência (usando execCommand para máxima compatibilidade)
+        copyQuoteBtn.addEventListener('click', () => {
+            const message = buildQuoteMessage();
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = message;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('Resumo do orçamento copiado!');
+            } catch (err) {
+                showToast('Não foi possível copiar o texto.', 'error');
+            }
+            
+            document.body.removeChild(tempTextArea);
+        });
+
+        // Inicialização
+        renderProducts();
+        renderQuoteList();
+    </script>
+</body>
+</html>
+```
